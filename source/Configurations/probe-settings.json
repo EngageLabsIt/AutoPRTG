@@ -1,8 +1,8 @@
 {
-  "prtg_http_host": "monitoring.odissea.at:24560",
+  "prtg_http_host": "",
   "prtg_username": "",
   "prtg_password": "",
-  "device_name": "A0P2-SQL01"
+  "device_name": ""
 }
 
 

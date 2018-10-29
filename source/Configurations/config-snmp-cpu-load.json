@@ -29,7 +29,7 @@
   ],
   "reports": [
     {
-      "name": "Report Odissea.COM SNMP CPU Load",
+      "name": "Report SNMP CPU Load",
       "template": "B01 Graph Only - 1m.htm",
 	  "owner": "prtgApiUser",
       "timezone": "W. Europe Standard Time|(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
@@ -42,7 +42,7 @@
       "usecompression": "0",
       "dataperiod": "1",
       "reporttype": "4",
-      "accessrights_group": "ODISSEA\\PRTG.Baselines",
+      "accessrights_group": "Domain\\Group",
       "accessrights_value": "100",
       "sensors": [
         {
