@@ -1,0 +1,365 @@
+{
+  "sensors": [
+    {
+      "internal_sensorId": 24,
+      "name": "Backup - Elys Application Databases Complete Chain - ElysAccounts",
+      "type": "mssqlv2",
+      "tags": "sqlsensor database",
+      "priority": "3",
+      "database": "ElysAccounts",
+      "useinstancename": 0,
+      "instancename": "",
+      "sqlquery": "Query_per_backup_PRTG_check.sql",
+      "InheritInterval": 0,
+      "interval": 300,
+      "primary_channel": 5,
+      "enabled_channels": 3,
+      "channel1_name": "Full - Daily",
+      "channel1_columnnumber": 0,
+      "channel2_name": "Diff - 3 Hours",
+      "channel2_columnnumber": 1,
+      "channel3_name": "Logs - 1 Hours",
+      "channel3_columnnumber": 2,
+      "channels": [
+        {
+          "channelId": 0,
+          "name": "Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 1,
+          "name": "Query Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 2,
+          "name": "Affected Rows",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 3,
+          "name": "Full - Daily",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 4,
+          "name": "Diff - 3 Hours",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "Automatic",
+          "properties": {
+            "upper_error_limit": 360,
+            "upper_warning_limit": 180,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 5,
+          "name": "Logs - 1 Hours",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "All",
+          "properties": {
+            "upper_error_limit": 120,
+            "upper_warning_limit": 60,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        }
+      ]
+    },
+    {
+      "internal_sensorId": 25,
+      "name": "Backup - Elys Infrastructure Databases Full Only - SSISDB",
+      "type": "mssqlv2",
+      "tags": "sqlsensor database",
+      "priority": "3",
+      "database": "SSISDB",
+      "useinstancename": 0,
+      "instancename": "",
+      "sqlquery": "Query_per_backup_PRTG_check.sql",
+      "InheritInterval": 0,
+      "interval": 300,
+      "primary_channel": 3,
+      "enabled_channels": 3,
+      "channel1_name": "Full - Daily",
+      "channel1_columnnumber": 0,
+      "channel2_name": "Diff - 3 Hours",
+      "channel2_columnnumber": 1,
+      "channel3_name": "Logs - 1 Hours",
+      "channel3_columnnumber": 2,
+      "channels": [
+        {
+          "channelId": 0,
+          "name": "Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 1,
+          "name": "Query Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 2,
+          "name": "Affected Rows",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 3,
+          "name": "Full - Daily",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "All",
+          "properties": {
+            "upper_error_limit": 2160,
+            "upper_warning_limit": 1440,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 4,
+          "name": "Diff - 3 Hours",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "Automatic",
+          "properties": {
+            "upper_error_limit": 360,
+            "upper_warning_limit": 180,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 5,
+          "name": "Logs - 1 Hours",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "All",
+          "properties": {
+            "upper_error_limit": 120,
+            "upper_warning_limit": 60,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        }
+      ]
+    },
+    {
+      "internal_sensorId": 26,
+      "name": "Backup - Elys Application Databases Full Only - ElysConfigurations",
+      "type": "mssqlv2",
+      "tags": "sqlsensor database",
+      "priority": "3",
+      "database": "ElysConfigurations",
+      "useinstancename": 0,
+      "instancename": "",
+      "sqlquery": "Query_per_backup_PRTG_check.sql",
+      "InheritInterval": 0,
+      "interval": 300,
+      "primary_channel": 3,
+      "enabled_channels": 3,
+      "channel1_name": "Full - Daily",
+      "channel1_columnnumber": 0,
+      "channel2_name": "Diff - 3 Hours",
+      "channel2_columnnumber": 1,
+      "channel3_name": "Logs - 1 Hours",
+      "channel3_columnnumber": 2,
+      "channels": [
+        {
+          "channelId": 0,
+          "name": "Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 1,
+          "name": "Query Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 2,
+          "name": "Affected Rows",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 3,
+          "name": "Full - Daily",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "All",
+          "properties": {
+            "upper_error_limit": 2160,
+            "upper_warning_limit": 1440,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 4,
+          "name": "Diff - 3 Hours",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "Automatic",
+          "properties": {
+            "upper_error_limit": 360,
+            "upper_warning_limit": 180,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 5,
+          "name": "Logs - 1 Hours",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "All",
+          "properties": {
+            "upper_error_limit": 120,
+            "upper_warning_limit": 60,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        }
+      ]
+    },
+    {
+      "internal_sensorId": 27,
+      "name": "Backup - Elys System Databases - master",
+      "type": "mssqlv2",
+      "tags": "sqlsensor database",
+      "priority": "3",
+      "database": "master",
+      "useinstancename": 0,
+      "instancename": "",
+      "sqlquery": "Query_per_backup_PRTG_check.sql",
+      "InheritInterval": 0,
+      "interval": 300,
+      "primary_channel": 3,
+      "enabled_channels": 3,
+      "channel1_name": "Full - Weekly",
+      "channel1_columnnumber": 0,
+      "channel2_name": "Diff - 3 Hours",
+      "channel2_columnnumber": 1,
+      "channel3_name": "Logs - 1 Hours",
+      "channel3_columnnumber": 2,
+      "channels": [
+        {
+          "channelId": 0,
+          "name": "Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 1,
+          "name": "Query Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 2,
+          "name": "Affected Rows",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 3,
+          "name": "Full - Weekly",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "All",
+          "properties": {
+            "upper_error_limit": 11520,
+            "upper_warning_limit": 10080,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 4,
+          "name": "Diff - 3 Hours",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "Automatic",
+          "properties": {
+            "upper_error_limit": 360,
+            "upper_warning_limit": 180,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 5,
+          "name": "Logs - 1 Hours",
+          "measure_unit": "",
+          "limit_type": "upper",
+          "decimal_mode": "All",
+          "properties": {
+            "upper_error_limit": 120,
+            "upper_warning_limit": 60,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        }
+      ]
+    }
+  ]
+}

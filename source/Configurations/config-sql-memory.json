@@ -1,0 +1,203 @@
+{
+  "sensors": [
+    {
+      "internal_sensorId": 1,
+      "name": "SQL Memory",
+      "type": "pccustom",
+      "tags": "performancecounter performancecountercustom database sql",
+      "priority": "5",
+      "InheritInterval": 1,
+      "interval": 60,
+      "primary_channel": 9,
+      "channels": [
+        {
+          "channelId": 2,
+          "name": "\\Memory\\Pages/sec",
+          "measure_unit": "pages/sec",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 200,
+            "upper_warning_limit": 100,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Page reads/sec is too high",
+            "warning_limit_message": "Page reads/sec is high"
+          }
+        },
+        {
+          "channelId": 3,
+          "name": "\\Memory\\Page Faults/sec",
+          "measure_unit": "pages/sec",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 4,
+          "name": "\\Memory\\Pages Input/sec",
+          "measure_unit": "pages/sec",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 5,
+          "name": "\\Memory\\Pages Output/sec",
+          "measure_unit": "pages/sec",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 6,
+          "name": "\\Memory\\Page Reads/sec",
+          "measure_unit": "IO/sec",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 7,
+          "name": "\\Memory\\Page Writes/sec",
+          "measure_unit": "IO/sec",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 30,
+            "upper_warning_limit": 10,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Page writes/sec is too high",
+            "warning_limit_message": "Page writes/sec is high"
+          }
+        },
+        {
+          "channelId": 8,
+          "name": "\\Memory\\Available Bytes",
+          "measure_unit": "KB",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 9,
+          "name": "\\SqlServer:Buffer Manager\\Buffer cache hit ratio",
+          "measure_unit": "%",
+          "limit_type": "lower",
+          "properties": {
+            "upper_error_limit": null,
+            "upper_warning_limit": null,
+            "lower_error_limit": 95,
+            "lower_warning_limit": 98,
+            "error_limit_message": "Buffer cache hit ratio is too low",
+            "warning_limit_message": "Buffer cache hit ratio is low"
+          }
+        },
+        {
+          "channelId": 10,
+          "name": "\\SqlServer:Buffer Manager\\Checkpoint pages/sec",
+          "measure_unit": "pages/sec",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 20000,
+            "upper_warning_limit": 15000,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Number of checkpoint pages is too high",
+            "warning_limit_message": "Number of checkpoint pages is high"
+          }
+        },
+        {
+          "channelId": 11,
+          "name": "\\SqlServer:Buffer Manager\\Page life expectancy",
+          "measure_unit": "sec",
+          "limit_type": "lower",
+          "properties": {
+            "upper_error_limit": null,
+            "upper_warning_limit": null,
+            "lower_error_limit": 500,
+            "lower_warning_limit": 1000,
+            "error_limit_message": "Page life expectancy must be higher (memory pressure? restart? failover?)",
+            "warning_limit_message": "Page life expectancy should be higher (memory pressure? restart? failover?)"
+          }
+        },
+        {
+          "channelId": 12,
+          "name": "\\SqlServer:Buffer Manager\\Lazy writes/sec",
+          "measure_unit": "lw/sec",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 13,
+          "name": "\\SqlServer:Memory Manager\\Memory Grants Pending",
+          "measure_unit": "#",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 14,
+          "name": "\\SqlServer:Memory Manager\\Target Server Memory (KB)",
+          "measure_unit": "KB",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 15,
+          "name": "\\SqlServer:Memory Manager\\Total Server Memory (KB)",
+          "measure_unit": "KB",
+          "limit_type": "none",
+          "properties": {}
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "name": "Report Odissea.COM SQL Memory",
+      "template": "B01 Graph Only - 1m.htm",
+	  "owner": "prtgApiUser",
+      "timezone": "W. Europe Standard Time|(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+      "papersize": "letter",
+      "orientation": "0",
+      "scheduletype": "6",
+      "maildisk": "0",
+      "emailaddress": "v5s4g3p8x9k1k0l7@elysteam.slack.com",
+      "emailgroup": "-1",
+      "usecompression": "0",
+      "dataperiod": "1",
+      "reporttype": "4",
+      "accessrights_group": "ODISSEA\\PRTG.Baselines",
+      "accessrights_value": "100",
+      "sensors": [
+        {
+          "internal_sensorId": 1,
+          "channels": [
+            { "channelId": 9 }
+          ]
+        },
+        {
+          "internal_sensorId": 1,
+          "channels": [
+            { "channelId": 11 }
+          ]
+        },
+        {
+          "internal_sensorId": 1,
+          "channels": [
+            { "channelId": 10 },
+            { "channelId": 12 }
+          ]
+        },
+        {
+          "internal_sensorId": 1,
+          "channels": [
+            { "channelId": 6 },
+            { "channelId": 4 }
+          ]
+        },
+        {
+          "internal_sensorId": 1,
+          "channels": [
+            { "channelId": 7 },
+            { "channelId": 5 }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,201 @@
+{
+  "sensors": [
+    {
+      "internal_sensorId": 20,
+      "name": "Live Coupons/Min",
+      "type": "mssqlv2",
+      "tags": "sqlsensor database sql",
+      "priority": "4",
+      "database": "ElysBetsLive",
+      "useinstancename": 0,
+      "instancename": "",
+      "sqlquery": "LiveCouponsMin.sql",
+      "InheritInterval": 0,
+      "interval": 30,
+      "primary_channel": 3,
+      "enabled_channels": 1,
+      "channel1_name": "Value",
+      "channel1_columnnumber": 0,
+      "channels": [
+        {
+          "channelId": 0,
+          "name": "Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 1,
+          "name": "Query Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 2,
+          "name": "Affected Rows",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 3,
+          "name": "Value",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "All",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "internal_sensorId": 21,
+      "name": "Prematch Coupons/Min",
+      "type": "mssqlv2",
+      "tags": "sqlsensor database sql",
+      "priority": "4",
+      "database": "ElysBetsPrematch",
+      "useinstancename": 0,
+      "instancename": "",
+      "sqlquery": "PrematchCouponsMin.sql",
+      "InheritInterval": 0,
+      "interval": 30,
+      "primary_channel": 3,
+      "enabled_channels": 1,
+      "channel1_name": "Value",
+      "channel1_columnnumber": 0,
+      "channels": [
+        {
+          "channelId": 0,
+          "name": "Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 1,
+          "name": "Query Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 2,
+          "name": "Affected Rows",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 3,
+          "name": "Value",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "All",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "internal_sensorId": 22,
+      "name": "Virtual Coupons/Min",
+      "type": "mssqlv2",
+      "tags": "sqlsensor database sql",
+      "priority": "4",
+      "database": "ElysBetsVirtual",
+      "useinstancename": 0,
+      "instancename": "",
+      "sqlquery": "VirtualCouponsMin.sql",
+      "InheritInterval": 0,
+      "interval": 30,
+      "primary_channel": 3,
+      "enabled_channels": 1,
+      "channel1_name": "Value",
+      "channel1_columnnumber": 0,
+      "channels": [
+        {
+          "channelId": 0,
+          "name": "Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 1,
+          "name": "Query Execution Time",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 2,
+          "name": "Affected Rows",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "Automatic",
+          "properties": {}
+        },
+        {
+          "channelId": 3,
+          "name": "Value",
+          "measure_unit": "",
+          "limit_type": "none",
+          "decimal_mode": "All",
+          "properties": {}
+        }
+      ]
+    },
+    {
+      "internal_sensorId": 23,
+      "name": "Total Coupons/Min",
+      "type": "aggregation",
+      "tags": "factorysensor database",
+      "priority": "3",
+      "InheritInterval": 0,
+      "interval": 30,
+      "primary_channel": 4,
+      "channels": [
+        {
+          "channelId": 1,
+          "name": "Live Coupon/Min",
+          "measure_unit": "#",
+          "function": "Channel({SID:20},3)",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 2,
+          "name": "Prematch Coupon/Min",
+          "measure_unit": "#",
+          "function": "Channel({SID:21},3)",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 3,
+          "name": "Virtual Coupon/Min",
+          "measure_unit": "#",
+          "function": "Channel({SID:22},3)",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 4,
+          "name": "Total Coupon/Min",
+          "measure_unit": "#",
+          "function": "Channel({SID:20},3)+Channel({SID:21},3)+Channel({SID:22},3)",
+          "limit_type": "none",
+          "properties": {}
+        }
+      ]
+    }
+  ]
+}

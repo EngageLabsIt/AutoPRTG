@@ -1,0 +1,107 @@
+{
+  "sensors": [
+    {
+      "internal_sensorId": 9,
+      "name": "TempDB Data/Log",
+      "type": "pccustom",
+      "tags": "performancecounter performancecountercustom",
+      "priority": "3",
+      "InheritInterval": 0,
+      "interval": 300,
+      "primary_channel": 3,
+      "channels": [
+        {
+          "channelId": 2,
+          "name": "\\PhysicalDisk(6)\\% Disk Time",
+          "measure_unit": "%",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 90,
+            "upper_warning_limit": 80,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Percentage of disk time is too high",
+            "warning_limit_message": "Percentage of disk time is high"
+          }
+        },
+        {
+          "channelId": 3,
+          "name": "\\PhysicalDisk(6)\\Avg. Disk Queue Length",
+          "measure_unit": "n",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 10,
+            "upper_warning_limit": 5,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Average Queue length is too high",
+            "warning_limit_message": "Average Queue length is high"
+          }
+        },
+        {
+          "channelId": 4,
+          "name": "\\PhysicalDisk(6)\\Avg. Disk sec/Read",
+          "measure_unit": "IO/sec",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 5,
+            "upper_warning_limit": 1,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Avg. Disk Reads is too high",
+            "warning_limit_message": "Avg. Disk Reads is high"
+          }
+        },
+        {
+          "channelId": 5,
+          "name": "\\PhysicalDisk(6)\\Avg. Disk sec/Write",
+          "measure_unit": "IO/sec",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 5,
+            "upper_warning_limit": 1,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Avg. Disk Writes is too high",
+            "warning_limit_message": "Avg. Disk Writes is high"
+          }
+        },
+        {
+          "channelId": 6,
+          "name": "\\PhysicalDisk(6)\\Disk Reads/sec",
+          "measure_unit": "IO/sec",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 800,
+            "upper_warning_limit": 600,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 7,
+          "name": "\\PhysicalDisk(6)\\Disk Writes/sec",
+          "measure_unit": "IO/sec",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 500,
+            "upper_warning_limit": 300,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "",
+            "warning_limit_message": ""
+          }
+        },
+        {
+          "channelId": 8,
+          "name": "\\PhysicalDisk(6)\\Current Disk Queue Length",
+          "measure_unit": "n",
+          "limit_type": "none",
+          "properties": {}
+        }
+      ]
+    }
+  ]
+}

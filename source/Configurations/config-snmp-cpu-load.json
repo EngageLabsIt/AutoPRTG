@@ -1,0 +1,57 @@
+{
+  "sensors": [
+    {
+      "internal_sensorId": 5,
+      "name": "SNMP CPU Load",
+      "type": "snmpcpu",
+      "tags": "snmp cpu cpuloadsensor database sql",
+      "priority": "4",
+      "InheritInterval": 1,
+      "interval": 60,
+      "primary_channel": 0,
+      "channels": [
+        {
+          "channelId": 0,
+          "name": "Total",
+          "measure_unit": null,
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 80,
+            "upper_warning_limit": 70,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "CPU pressure too high",
+            "warning_limit_message": "High CPU pressure"
+          }
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "name": "Report Odissea.COM SNMP CPU Load",
+      "template": "B01 Graph Only - 1m.htm",
+	  "owner": "prtgApiUser",
+      "timezone": "W. Europe Standard Time|(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+      "papersize": "letter",
+      "orientation": "0",
+      "scheduletype": "6",
+      "maildisk": "0",
+      "emailaddress": "v5s4g3p8x9k1k0l7@elysteam.slack.com",
+      "emailgroup": "-1",
+      "usecompression": "0",
+      "dataperiod": "1",
+      "reporttype": "4",
+      "accessrights_group": "ODISSEA\\PRTG.Baselines",
+      "accessrights_value": "100",
+      "sensors": [
+        {
+          "internal_sensorId": 5,
+          "channels": [
+            { "channelId": 0 }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "sensors": [
+    {
+      "internal_sensorId": 2,
+      "name": "SQL Requests",
+      "type": "pccustom",
+      "tags": "performancecounter performancecountercustom database sql",
+      "priority": "5",
+      "InheritInterval": 1,
+      "interval": 60,
+      "primary_channel": 5,
+      "channels": [
+        {
+          "channelId": 2,
+          "name": "\\Processor Information(_Total)\\% Privileged Time",
+          "measure_unit": "#",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 15,
+            "upper_warning_limit": 10,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "CPU usage for non SQL operations too high",
+            "warning_limit_message": "CPU usage for non SQL operations high"
+          }
+        },
+        {
+          "channelId": 3,
+          "name": "\\System\\Context Switches/sec",
+          "measure_unit": "#",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 80000,
+            "upper_warning_limit": 64000,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Too much context switches",
+            "warning_limit_message": "Context switches are high"
+          }
+        },
+        {
+          "channelId": 4,
+          "name": "\\System\\Processor Queue Length",
+          "measure_unit": "#",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 64,
+            "upper_warning_limit": 32,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "CPU pressure critical",
+            "warning_limit_message": "CPU pressure warning"
+          }
+        },
+        {
+          "channelId": 5,
+          "name": "\\SqlServer:SQL Statistics\\Batch Requests/sec",
+          "measure_unit": "#",
+          "limit_type": "none",
+          "properties": {}
+        },
+        {
+          "channelId": 6,
+          "name": "\\SqlServer:SQL Statistics\\SQL Compilations/sec",
+          "measure_unit": "#",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 1500,
+            "upper_warning_limit": 1000,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Plan compiles too high",
+            "warning_limit_message": "Plan compiles high"
+          }
+        },
+        {
+          "channelId": 7,
+          "name": "\\SqlServer:SQL Statistics\\SQL Re-Compilations/sec",
+          "measure_unit": "#",
+          "limit_type": "upper",
+          "properties": {
+            "upper_error_limit": 150,
+            "upper_warning_limit": 100,
+            "lower_error_limit": null,
+            "lower_warning_limit": null,
+            "error_limit_message": "Plan re-compiles too high",
+            "warning_limit_message": "Plan re-compiles high"
+          }
+        }
+      ]
+    }
+  ],
+  "reports": [
+    {
+      "name": "Report Odissea.COM SQL Requests",
+      "template": "B01 Graph Only - 1m.htm",
+	  "owner": "prtgApiUser",
+      "timezone": "W. Europe Standard Time|(UTC+01:00) Amsterdam, Berlin, Bern, Rome, Stockholm, Vienna",
+      "papersize": "letter",
+      "orientation": "0",
+      "scheduletype": "6",
+      "maildisk": "0",
+      "emailaddress": "v5s4g3p8x9k1k0l7@elysteam.slack.com",
+      "emailgroup": "-1",
+      "usecompression": "0",
+      "dataperiod": "1",
+      "reporttype": "4",
+      "accessrights_group": "ODISSEA\\PRTG.Baselines",
+      "accessrights_value": "100",
+      "sensors": [
+        {
+          "internal_sensorId": 2,
+          "channels": [
+            { "channelId": 5 },
+            { "channelId": 6 },
+            { "channelId": 7 }
+          ]
+        },
+        {
+          "internal_sensorId": 2,
+          "channels": [
+            { "channelId": 4 }
+          ]
+        },
+        {
+          "internal_sensorId": 2,
+          "channels": [
+            { "channelId": 3 }
+          ]
+        }
+      ]
+    }
+  ]
+}
