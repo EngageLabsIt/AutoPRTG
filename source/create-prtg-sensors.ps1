@@ -175,6 +175,7 @@ Foreach-Object {
                 }
                 $params.executionmode = "ReadData"
                 $params.sqlquery = $sensor.sqlquery
+                $params.handledbnull = $sensor.handledbnull # 0 = "Number 0"; 1 = Error
                 if ($sensor.enabled_channels -ge 1)
                 {
                     $params.channel1name = $sensor.channel1_name
