@@ -160,8 +160,8 @@ AutoPRTG is released under the [MIT License](LICENSE).
 
 AutoPRTG is made by part of [Engage IT Services](https://github.com/EngageITServices) team:
 
-- [Alessandro Alpi] (https://github.com/suxstellino)
-- [Fabio Zanella] (https://github.com/fabiozanella)
+- [Alessandro Alpi](https://github.com/suxstellino)
+- [Fabio Zanella](https://github.com/fabiozanella)
 - Marco Atzori
 
 A special thanks to [Lord Milko](https://github.com/lordmilko).
