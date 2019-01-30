@@ -151,3 +151,17 @@ To set a limit you have to set an upper limit or lower limit, it is not possible
 ##### Report sensor channel configuration option
 
 - **channelId**: Identifier of the channel
+
+## License
+
+AutoPRTG is released under the [MIT License](LICENSE).
+
+## Contributors
+
+AutoPRTG is made by part of [Engage IT Services](https://github.com/EngageITServices) team:
+
+- [Alessandro Alpi] (https://github.com/suxstellino)
+- [Fabio Zanella] (https://github.com/fabiozanella)
+- Marco Atzori
+
+A special thanks to [Lord Milko](https://github.com/lordmilko).
