@@ -83,38 +83,10 @@ To set a limit you have to set an upper limit or lower limit, it is not possible
 #### Reports option
 
 - **name**: Report name
-- **template**: Name of the template that this report uses. You have to use one of those templates:
-  - "A30 Graph with Data Table - Graph 1m - Table 1m.htm"
-  - "A31 Graph with Data Table - Graph 5m - Table 5m.htm"
-  - "A32 Graph with Data Table - Graph 15m - Table 15m.htm"
-  - "A33 Graph with Data Table - Graph 30m - Table 30m.htm"
-  - "A41 Graph with Data Table - Graph 1h - Table 1h.htm"
-  - "A42 Graph with Data Table - Graph 1h - Table 24h.htm"
-  - "A50 Graph with Data Table - Graph 24h - Table 24h.htm"
-  - "A60 Data Table - Table 1m.htm"
-  - "A61 Data Table - Table 5m.htm"
-  - "A62 Data Table - Table 15m.htm"
-  - "A63 Data Table - Table 30m.htm"
-  - "A64 Data Table - Table 1h.htm"
-  - "A65 Data Table - Table 24h.htm"
-  - "B01 Graph Only - 1m.htm"
-  - "B02 Graph Only - 5m.htm"
-  - "B03 Graph Only - 15m.htm"
-  - "B04 Graph Only - 30m.htm"
-  - "B05 Graph Only - 60m.htm"
-  - "B11 Graph Only - 24h.htm"
-  - "C01 Sensorlist 60m.htm"
-  - "C02 Sensorlist nograph.htm"
-  - "T1a Top100 Highest and Lowest (1min).htm"
-  - "T1b Top100 Highest and Lowest (5min).htm"
-  - "T1c Top100 Highest and Lowest (60min).htm"
-  - "T2 Top10 Uptime percent.htm"
-  - "T2 Top10 Uptime time.htm"
-  - "T3 Top100 Uptime percent.htm"
-  - "T3 Top100 Uptime time.htm"
+- **template**: Name of the template that this report uses. You have to use one of the templates [here](source/static/list-of-templates.txt).
 
 - **owner**: PRTG user account that PRTG uses to run the report. This user must have the grant to see the sensors.
-- **timezone**: timezone for all dates in this report. This includes schedule dates, report time span, and dates in tables and graphs. You have to use one of the values from [here](static\list-of-timezones.txt)
+- **timezone**: timezone for all dates in this report. This includes schedule dates, report time span, and dates in tables and graphs. You have to use one of the values from [here](source/static/list-of-timezones.txt).
 
 - **papersize**: Define the paper size in which PDF reports are created. Choose between:
   - "none": Do not specify a paper format. The size is set automatically.
@@ -129,7 +101,7 @@ To set a limit you have to set an upper limit or lower limit, it is not possible
   - “0” = Portrait: Use portrait mode for the page orientation.
   - “1” = Landscape: Use landscape mode for the page orientation. The landscape format is designed to properly show data tables of sensors with many channels. Other parts of the report will remain in portrait mode and do not re-size to the landscape format.
 
-- **scheduletype**: 
+- **scheduletype**:
   - "0": No schedule (run interactively/on-demand only): Only use the options on the Run Now tab to start generating this report manually.
   - "1": Every full hour: Run this report every 60 minutes.
   - "2" #Every day at a specific hour: Run this report every 24 hours.
