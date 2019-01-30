@@ -298,11 +298,14 @@ Foreach-Object {
                         if ($channel.limit_type -eq "upper")
                         {
                             # upper limit
-                            $CreatedSensor | Get-Channel -Name $channelName | Set-ChannelProperty -LimitsEnabled 1 -UpperErrorLimit $property.upper_error_limit -UpperWarningLimit $property.upper_warning_limit -ErrorLimitMessage $property.error_limit_message -WarningLimitMessage $property.warning_limit_message
+                            $ChannelId = $channel.channelId
+                            $CreatedSensor | Set-ObjectProperty -RawParameters @{"limitmode_$($ChannelId)"=1;"limitmaxerror_$($ChannelId)"=[string]$property.upper_error_limit;"limitmaxwarning_$($ChannelId)"=[string]$property.upper_warning_limit;"limiterrormsg_$($ChannelId)"=$property.error_limit_message;"limitwarningmsg_$($ChannelId)"=$property.warning_limit_message} -Force
+
                         } else # lower
                         {
                             # lower limit
-                            $CreatedSensor | Get-Channel -Name $channelName | Set-ChannelProperty -LimitsEnabled 1 -LowerErrorLimit $property.lower_error_limit -LowerWarningLimit $property.lower_warning_limit -ErrorLimitMessage $property.error_limit_message -WarningLimitMessage $property.warning_limit_message
+                            $ChannelId = $channel.channelId
+                            $CreatedSensor | Set-ObjectProperty -RawParameters @{"limitmode_$($ChannelId)"=1;"limitminerror_$($ChannelId)"=[string]$property.lower_error_limit;"limitminwarning_$($ChannelId)"=[string]$property.lower_warning_limit;"limiterrormsg_$($ChannelId)"=$property.error_limit_message;"limitwarningmsg_$($ChannelId)"=$property.warning_limit_message} -Force
                         }
                     }
                 }    
