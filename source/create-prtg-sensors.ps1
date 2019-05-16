@@ -15,6 +15,7 @@ $configurationsPath = Join-Path -Path $CurrentFolder -ChildPath $configurationsF
 
 Write-Host "This script will create a set of PRTG SENSORS with counters based on the probe file <$probeSettingFile> and configurations files <$configFilter> in the folder:" -ForegroundColor White;
 Write-Host "$configurationsPath" -ForegroundColor White;
+Write-Host "It is strongly recommended to create a backup of the PRTG sensors configurations before!" -ForegroundColor Yellow;
 $mainOption = pause -Message "Press ENTER to continue..." -ForegroundColor White;
 if ($mainOption -ne "" -and $mainOption.VirtualKeyCode -ne "13")
 {

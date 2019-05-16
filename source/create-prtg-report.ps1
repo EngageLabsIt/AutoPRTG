@@ -26,6 +26,7 @@ $configurationsPath = Join-Path -Path $CurrentFolder -ChildPath $configurationsF
 
 Write-Host "This script will create a set of PRTG REPORTS with counters based on the probe file <$probeSettingFile> and configurations files <$configFilter> in the folder:" -ForegroundColor White;
 Write-Host "$configurationsPath" -ForegroundColor White;
+Write-Host "It is strongly recommended to create a backup of the PRTG reports configurations before!" -ForegroundColor Yellow;
 $mainOption = pause -Message "Press ENTER to continue..." -ForegroundColor White;
 if ($mainOption -ne "" -and $mainOption.VirtualKeyCode -ne "13")
 {
@@ -420,31 +421,31 @@ Foreach-Object {
 
         foreach ($reportSensor in $report.sensors)
         {
-            $sensorName = ($sensors | Where { $_.internal_sensorId -eq $reportSensor.internal_sensorId } | Select-Object -First 1 ).name
-            # checking for the sensor name (returning ps list object)
-            $retrivedSensors = Get-Device -Id $device.Id | Get-Sensor -Name $sensorName
-            if ($retrivedSensors.length -ne 1)
-            {
-                Write-Host "Sensor '$sensorName' not found or there are more than a sensor with the filter condition!" -ForegroundColor Red
-            }
-            else
-            {
-                $retrivedSensor = $retrivedSensors | Select-Object -First 1
+			$sensorName = ($sensors | Where { $_.internal_sensorId -eq $reportSensor.internal_sensorId } | Select-Object -First 1 ).name
+			# checking for the sensor name (returning ps list object)
+			$retrivedSensors = Get-Device -Id $device.Id | Get-Sensor -Name $sensorName
+			if ($retrivedSensors.length -ne 1)
+			{
+				Write-Host "Sensor '$sensorName' not found or there are more than a sensor with the filter condition!" -ForegroundColor Red
+			}
+			else
+			{
+				$retrivedSensor = $retrivedSensors | Select-Object -First 1
 
-                $reportNodeId++;
+				$reportNodeId++;
 
-                [string[]]$channelNames = @()
-                foreach ($channel in $reportSensor.channels)
-                {
-                    $channelName = (($sensors | Where { $_.internal_sensorId -eq $reportSensor.internal_sensorId } | Select-Object -First 1 ).channels | Where { $_.channelId -eq $channel.channelId} | Select-Object -First 1).name;
-                    $channelName = $channelName.Substring($channelName.LastIndexOf('\') + 1);
-                    $channelNames += ,$channelName;
-                }
-                Write-Host "Adding sensor '$sensorName' with channels: '$channelNames'..." -ForegroundColor Gray
-                Add-prtgSensorToReport -PRTGHost $PRTGUrl -Auth $auth -ReportID $reportId -ReportNodeId $reportNodeId -SensorID $retrivedSensor.Id -ChannelNames $channelNames
-                Write-Host "Added Sensor '$sensorName'" -ForegroundColor White
-            }
-            Write-Host;
+				[string[]]$channelNames = @()
+				foreach ($channel in $reportSensor.channels)
+				{
+					$channelName = (($sensors | Where { $_.internal_sensorId -eq $reportSensor.internal_sensorId } | Select-Object -First 1 ).channels | Where { $_.channelId -eq $channel.channelId} | Select-Object -First 1).name;
+					$channelName = $channelName.Substring($channelName.LastIndexOf('\') + 1);
+					$channelNames += ,$channelName;
+				}
+				Write-Host "Adding sensor '$sensorName' with channels: '$channelNames'..." -ForegroundColor Gray
+				Add-prtgSensorToReport -PRTGHost $PRTGUrl -Auth $auth -ReportID $reportId -ReportNodeId $reportNodeId -SensorID $retrivedSensor.Id -ChannelNames $channelNames
+				Write-Host "Added Sensor '$sensorName'" -ForegroundColor White
+			}
+			Write-Host;
         }
     }
 }
